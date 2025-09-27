@@ -1,7 +1,7 @@
 'use client';
 
-import type { Project } from '@/components/Project';
-import StatusBadge from '@/components/StatusBadge';
+import type { Project } from 'components/Project';
+import StatusBadge from 'components/StatusBadge';
 
 type Props = {
   rows: Project[];

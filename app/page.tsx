@@ -1,11 +1,11 @@
 'use client';
 
 import { useEffect, useState, useMemo } from 'react';
-import { createClient } from '@/utils/supabase/client';
-import type { Project } from '@/components/Project';
-import Toolbar from '@/components/Toolbar';
-import ProjectTable from '@/components/ProjectTable';
-import ProjectModal from '@/components/ProjectModal';
+import { createClient } from 'utils/supabase/client';
+import type { Project } from 'components/Project';
+import Toolbar from 'components/Toolbar';
+import ProjectTable from 'components/ProjectTable';
+import ProjectModal from 'components/ProjectModal';
 
 export default function Home() {
   const supabase = createClient();
