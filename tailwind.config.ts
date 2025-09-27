@@ -1,3 +1,11 @@
+// Optional-load Preline plugin to avoid build errors if package is missing
+let prelinePlugin: any = null;
+try {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  prelinePlugin = require("preline/plugin");
+} catch (_e) {
+  // Preline not installed; skipping plugin
+}
 import type { Config } from "tailwindcss";
 
 export default {
@@ -7,6 +15,7 @@ export default {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/preline/dist/*.js",
   ],
   theme: {
     extend: {
@@ -59,5 +68,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/forms"), ...(prelinePlugin ? [prelinePlugin] : [])],
 } satisfies Config;
