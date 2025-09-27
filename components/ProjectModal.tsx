@@ -1,6 +1,6 @@
 'use client';
 
-import type { Project } from '@/types/project';
+import type { Project } from '@/components/Project';
 
 type Form = {
   name: string;

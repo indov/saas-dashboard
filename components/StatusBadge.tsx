@@ -1,4 +1,4 @@
-import { Status } from '@/types/project';
+import { Status } from '@/components/Project';
 
 export default function StatusBadge({ status }: { status: Status }) {
   switch (status) {

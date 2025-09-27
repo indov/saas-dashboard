@@ -1,6 +1,6 @@
 'use client';
 
-import type { Project } from '@/types/project';
+import type { Project } from '@/components/Project';
 import StatusBadge from '@/components/StatusBadge';
 
 type Props = {

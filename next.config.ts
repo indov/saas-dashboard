@@ -1,7 +1,27 @@
-import type { NextConfig } from "next";
+
+
+const path = require('path');
+
+interface WebpackConfig {
+  resolve: {
+    alias: Record<string, string>;
+  };
+  // other webpack config properties can be added here if needed
+}
+
+interface NextConfig {
+  webpack: (config: WebpackConfig) => WebpackConfig;
+}
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  webpack: (config: WebpackConfig): WebpackConfig => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@': path.resolve(__dirname, './'),
+    };
+
+    return config;
+  },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
